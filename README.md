@@ -47,8 +47,8 @@ See it a couple simple examples [here](http://johnpolacek.com/sizeit/sizeit.js/d
 
 ## Who?
 
-sizeit.js created by John Polacek
-Twitter: http://twitter.com/#!/johnpolacek
+sizeit.js created by John Polacek  
+Twitter: http://twitter.com/#!/johnpolacek  
 Blog: http://johnpolacek.com
 
 
