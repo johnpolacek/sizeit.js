@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>sizeit.js demo</title>
+	
+	<meta name="title" content="sizeit.js demo">
+	<meta name="description" content="sizeit.js is a helper script for responsive website design">
+	
+	<meta name="author" content="John Polacek">
+		
+	<!-- Required viewport setting for sizeit to work on devices -->
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	
+	<!-- Do sizeit in the head so CSS is dynamically added first -->
+	<script src="sizeit.js"></script>
+	<script>
+		sizeit.configure(
+			{
+				max: 400,
+				css: "css/phone-portrait.css",
+				name: "phone-portrait"
+			},
+			{
+				max: 600,
+				css: "css/phone-landscape.css",
+				name: "phone-landscape"
+			},
+			{
+				max: 800,
+				css: "css/tablet-portrait.css",
+				name: "tablet"
+			},
+			{
+				css: "css/tablet-landscape.css",
+				name: "large"
+			}
+		);
+	</script>
+</head>
+
+<body>
+	
+	<p>This is a demo of sizeit.js showing how it works with devices on orientation change.</p>
+	
+	<p id="phone-portrait">Phone - Portrait Mode (400 pixels wide or less)</p>
+	<p id="phone-landscape">Phone - Landscape Mode (400-600 pixels wide)</p>
+	<p id="tablet-portrait">Tablet - Portrait Mode (600-800 pixels wide or less)</p>
+	<p id="tablet-landscape">Tablet - Landscape Mode (over 800 pixels wide)</p>
+	
+	<div id="width"></div>
+	<div id="size"></div>
+	
+	<script>
+		var widthText = document.createTextNode("screen width is "+sizeit.width());
+		var sizeText = document.createTextNode("sizeit size is "+sizeit.size());
+	
+		document.getElementById("width").appendChild(widthText);
+				
+		document.getElementById("size").appendChild(sizeText);
+		
+		window.onresize = function() {
+			document.getElementById("width").removeChild(widthText);
+			widthText = document.createTextNode("screen width is "+sizeit.width());
+			document.getElementById("width").appendChild(widthText);
+			
+			document.getElementById("size").removeChild(sizeText);
+			sizeText = document.createTextNode("sizeit size is "+sizeit.size());
+			document.getElementById("size").appendChild(sizeText);
+		};
+		
+	</script>
+
+</body>
+</html>

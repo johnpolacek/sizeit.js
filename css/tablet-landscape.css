@@ -1,0 +1,8 @@
+#phone-portrait, #phone-landscape, #tablet-portrait {
+    display: none;
+}
+
+#tablet-landscape {
+    font-size: 24px;
+    font-weight: bold;
+}
