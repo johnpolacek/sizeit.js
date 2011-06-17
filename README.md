@@ -20,7 +20,7 @@ Embed the script in the head of your page. Configure breakpoints and link to css
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 
 	<!-- Do sizeit in the head so CSS is dynamically added first -->
-	<script src="sizeit.js"></script>
+	<script src="sizeit.min.js"></script>
 	<script>
 	sizeit.configure(
 	  {
@@ -47,8 +47,8 @@ See it a couple simple examples [here](http://johnpolacek.com/sizeit/sizeit.js/d
 
 ## Who?
 
-sizeit.js created by John Polacek
-Twitter: http://twitter.com/#!/johnpolacek
+sizeit.js created by John Polacek  
+Twitter: http://twitter.com/#!/johnpolacek  
 Blog: http://johnpolacek.com
 
 

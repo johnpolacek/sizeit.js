@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	
 	<!-- Do sizeit in the head so CSS is dynamically added first -->
-	<script src="sizeit.js"></script>
+	<script src="sizeit.min.js"></script>
 	<script>
 		sizeit.configure(
 			{
@@ -43,6 +43,29 @@
 	<p id="small">This sentence will appear on small screens (like phones)</p>
 	<p id="medium">This sentence will appear on medium screens (like tablets)</p>
 	<p id="large">This sentence will appear on large screens (like desktops)</p>
+	
+	<div id="width"></div>
+	<div id="size"></div>
+	
+	<script>
+		var widthText = document.createTextNode("screen width is "+sizeit.width());
+		var sizeText = document.createTextNode("sizeit size is "+sizeit.size());
+	
+		document.getElementById("width").appendChild(widthText);
+				
+		document.getElementById("size").appendChild(sizeText);
+		
+		window.onresize = function() {
+			document.getElementById("width").removeChild(widthText);
+			widthText = document.createTextNode("screen width is "+sizeit.width());
+			document.getElementById("width").appendChild(widthText);
+			
+			document.getElementById("size").removeChild(sizeText);
+			sizeText = document.createTextNode("sizeit size is "+sizeit.size());
+			document.getElementById("size").appendChild(sizeText);
+		};
+		
+	</script>
 
 </body>
 </html>
