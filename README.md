@@ -23,20 +23,9 @@ Embed the script in the head of your page. Configure breakpoints and link to css
 	<script src="sizeit.min.js"></script>
 	<script>
 	sizeit.configure(
-	  {
-		max: 600,
-		css: "css/small.css",
-		name: "small"
-	  },
-	  {
-		max: 1024,
-		css: "css/medium.css",
-		name: "medium"
-	  },
-	  {
-		css: "css/large.css",
-		name: "large"
-	  }
+		{ max: 600, css: "css/small.css" },
+		{ max: 1024, css: "css/medium.css" },
+		{ css: "css/large.css" }
 	);
 	</script>
 	
