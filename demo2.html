@@ -9,6 +9,7 @@
 	
 	<meta name="title" content="sizeit.js demo">
 	<meta name="description" content="sizeit.js is a helper script for responsive website design">
+	
 	<meta name="author" content="John Polacek">
 		
 	<!-- Required viewport setting for sizeit to work on devices -->
@@ -19,18 +20,23 @@
 	<script>
 		sizeit.configure(
 			{
+				max: 400,
+				css: "css/phone-portrait.css",
+				name: "phone-portrait"
+			},
+			{
 				max: 600,
-				css: "css/small.css",
-				name: "small"
+				css: "css/phone-landscape.css",
+				name: "phone-landscape"
 			},
 			{
-				max: 1024,
-				css: "css/medium.css",
-				name: "medium"
+				max: 800,
+				css: "css/tablet-portrait.css",
+				name: "tablet-portrait"
 			},
 			{
-				css: "css/large.css",
-				name: "large"
+				css: "css/tablet-landscape.css",
+				name: "tablet-landscape"
 			}
 		);
 	</script>
@@ -38,14 +44,17 @@
 
 <body>
 	
-	<p>This is a demo of sizeit.js a helper function for responsive web design.</p>
+	<p>This is a demo of sizeit.js showing how it works with devices on orientation change.</p>
 	
-	<p id="small">This sentence will appear on small screens (like phones)</p>
-	<p id="medium">This sentence will appear on medium screens (like tablets)</p>
-	<p id="large">This sentence will appear on large screens (like desktops)</p>
+	<p id="phone-portrait">Phone - Portrait Mode (400 pixels wide or less)</p>
+	<p id="phone-landscape">Phone - Landscape Mode (400-600 pixels wide)</p>
+	<p id="tablet-portrait">Tablet - Portrait Mode (600-800 pixels wide or less)</p>
+	<p id="tablet-landscape">Tablet - Landscape Mode (over 800 pixels wide)</p>
+	
+	<p>Note, you can assign a name to the size configurations for use in other scripts:<br />
+	<em><span id="size"></span></em></p>
 	
 	<div id="width"></div>
-	<div id="size"></div>
 	
 	<script>
 		var widthText = document.createTextNode("screen width is "+sizeit.width());

@@ -77,6 +77,11 @@
             // sort by breakpoints, lowest to highest
             for (var i = 0; i < config.settings.length; i++) {
                 
+                // set name to css href if not assigned
+                if (config.settings[i].name === undefined) {
+                    config.settings[i].name = config.settings[i].css;
+                }
+                
                 for (var j = i + 1; j < config.settings.length; j++) {
                     
                     if (config.settings[i].max > config.settings[j].max) {
