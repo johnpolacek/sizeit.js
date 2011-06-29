@@ -28,6 +28,17 @@ Embed the script in the head of your page. Configure breakpoints and link to css
 		{ css: "css/large.css" }
 	);
 	</script>
+    
+Add names to the settings for use in other javascript on the page:
+
+	<script>
+	sizeit.configure(
+		{ max: 600, css: "css/small.css", name:"phone" },
+		{ max: 1024, css: "css/medium.css", name:"tablet" },
+		{ css: "css/large.css", name:"desktop" }
+	);
+    alert('This page has been designed to be viewed on a '+sizeit.size()+' screen.');
+	</script>
 	
 ## Where?
 
