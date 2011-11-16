@@ -1,8 +1,3 @@
 #medium, #large {
     display: none;
 }
-
-#small {
-    font-size: 24px;
-    font-weight: bold;
-}
