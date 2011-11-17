@@ -1,88 +1,145 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
 <head>
-  <meta charset='utf-8'>
 
-  <title>johnpolacek/sizeit.js @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #fff;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #000000; }
-    h3 { text-align: center; color: #000000; }
-    a { color: #000000; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<title>jQuery Responsive Thumbnail Gallery Plugin</title>
+	
+	<meta name="title" content="jQuery Responsive Thumbnail Gallery Plugin">
+	<meta name="description" content="jQuery Responsive Thumbnail Gallery Plugin on Github, developed by John Polacek">
+	
+	<meta name="author" content="John Polacek">
+	
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	
+	<!-- Viewport setting for proper display on devices -->	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        
+    <!-- Do sizeit in the head so CSS is dynamically added first -->
+	<script src="js/sizeit.min.js"></script>
+	<script>
+		sizeit.configure(
+			{ max: 600, css: "css/small.css", name: "small" },
+			{ max: 1024, css: "css/medium.css", name: "medium" },
+			{ css: "css/large.css", name: "large" }
+		);
+	</script>
+	
 </head>
 
 <body>
-  <a href="https://github.com/johnpolacek/sizeit.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/johnpolacek/sizeit.js/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/johnpolacek/sizeit.js/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/johnpolacek/sizeit.js">sizeit.js</a>
-      <span class="small">by <a href="https://github.com/johnpolacek">johnpolacek</a></span></h1>
-
-    <div class="description">
-      sizeit.js is a JavaScript utility that detects the screen size and loads external css based on the settings you configure. Works kinda like media queries.
-    </div>
-
+    <a href="https://github.com/johnpolacek/sizeit.js">
+		<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+	</a>
     
+    <div id="container">
+		
+		<h1>
+			<a href="https://github.com/johnpolacek/ResponsiveThumbnailGallery">sizeit.js</a><br />
+		</h1>
+		<h2>by <a href="http://johnpolacek.github.com">johnpolacek</a></h2>
+		
+		<div class="description">
+			a javascript helper for responsive web design
+		</div>
+		
+		<div class="demo">
+            <p>sizeit.js is a JavaScript utility that detects the screen size and loads external css based on the settings you configure. Works kinda like media queries.</p>
+            
+            <p id="small">This sentence will appear on small screens <br /><small>(like phones)</small></p>
+            <p id="medium">This sentence will appear on medium screens <br /><small>(like tablets)</small></p>
+            <p id="large">This sentence will appear on large screens <br /><small>(like desktops)</small></p>
+            
+            <p>Use sizeit to get the width of the browser window<br />
+            <em><span id="width"></span></em></p>
+            
+            <p>Assign a name to the size configurations for use in other scripts<br />
+            <em><span id="size"></span></em></p>
+        </div>
+		
+		<div class="guide">
+			
+            <h3>How to Use</h3>
+			<p>Embed the script in the head of your page. Configure breakpoints and link to css stylesheets for each of the sizes you wish to target. For example, to target small (phones), medium (tablets) and large (desktop), you could configure it as follows.</p>
+			<p><blockquote><pre>
+&lt;!-- Required viewport setting for sizeit to work on devices --&gt;
+&lt;meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"&gt;
 
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>John Polacek (johnpolacek@gmail.com)<br/>SgtLegend (legend@sgtlegend.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>John Polacek (johnpolacek@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/johnpolacek/sizeit.js/zipball/master">zip</a> or
-      <a href="https://github.com/johnpolacek/sizeit.js/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/johnpolacek/sizeit.js</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/johnpolacek/sizeit.js">johnpolacek/sizeit.js</a>
-    </div>
-
-  </div>
+&lt;!-- Do sizeit in the head so CSS is dynamically added first --&gt;
+&lt;script src="sizeit.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+sizeit.configure(
+  {
+    max: 600,
+    css: "css/small.css",
+    name: "small"
+  },
+  {
+    max: 1024,
+    css: "css/medium.css",
+    name: "medium"
+  },
+  {
+    css: "css/large.css",
+    name: "large"
+  }
+);
+&lt;/script&gt;</pre></blockquote></p>
+			
+			<p>For each setting you wish to have, set these parameters:</p>
+			<ul class="parameters">
+				<li><strong>max:</strong> max screen width to display the setting</li>
+				<li><strong>css:</strong> path to css for this setting</li>
+				<li><strong>name:</strong> name for the setting <small>(optional)</small></li>
+			</ul>
+		</div>
+		
+        <p class="authors">
+			Authors<br />
+			<a class="author-link" href="http://johnpolacek.github.com">John Polacek</a>
+			<a class="author-link" href="http://www.chrisupjohn.me">SgtLegend</a>
+		</p>
+        
+		<p class="download">
+			Download Plugin<br />
+			<a class="download download-link" href="https://github.com/johnpolacek/sizeit.js/zipball/master">zip</a>
+			<a class="download download-link" href="https://github.com/johnpolacek/sizeit.js/tarball/master">tar</a>
+		</p>
+		
+		<p class="github">
+			Other stuff by me<br />
+			<a class="github-link" href="http://johnpolacek.github.com">johnpolacek.github.com</a>
+		</p>
+		
+		<div class="footer">
+			<p>
+				<a href="http://twitter.com/johnpolacek">@johnpolacek</a>
+				<a href="http://johnpolacek.com">johnpolacek.com</a>
+			</p>
+		</div>
+	</div>
+	
+	
+	<script>
+		// Script for the demo
+        
+        var widthText = document.createTextNode("sizeit.width() = "+sizeit.width());
+		var sizeText = document.createTextNode("sizeit.size() = "+sizeit.size());
+	
+		document.getElementById("width").appendChild(widthText);
+		document.getElementById("size").appendChild(sizeText);
+		
+		window.onresize = function() {
+			document.getElementById("width").removeChild(widthText);
+			widthText = document.createTextNode("sizeit.width() = "+sizeit.width());
+			document.getElementById("width").appendChild(widthText);
+			
+			document.getElementById("size").removeChild(sizeText);
+			sizeText = document.createTextNode("sizeit.size() = "+sizeit.size());
+			document.getElementById("size").appendChild(sizeText);
+		};
+		
+	</script>
 
 </body>
 </html>
