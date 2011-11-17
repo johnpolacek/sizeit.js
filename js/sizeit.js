@@ -1,3 +1,12 @@
+/*
+	sizeit.js
+	by John Polacek (@johnpolacek)
+	
+	Docs: http://johnpolacek.github.com/sizeit.js/
+	
+	License: http://www.opensource.org/licenses/mit-license.php
+*/
+
 (function()
 {
 	var config = {};
